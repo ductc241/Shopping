@@ -1,0 +1,31 @@
+/*=============== SIDEBAR ===============*/
+.sidebar{
+    display: none;
+    padding-top: 60px;
+}
+
+.sidebar__box{
+    margin-bottom: 40px;
+}
+
+.sidebar__title{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar__category-item{
+    line-height: 26px;
+    cursor: pointer;
+    padding: 7px 0;
+    color: var(--text-color-primary);
+}
+
+.sidebar__slider{
+    -webkit-appearance: none;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 5px;
+    background: #d3d3d3;
+}

@@ -1,0 +1,30 @@
+.shop__action{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter__toggle{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    color: var(--color-primary);
+}
+
+.sorting__container{
+    border: none;
+    outline: none;
+    padding: 9px 20px;
+    height: 40px;
+}
+
+.sorting__container:active{
+    background-color: #f6f6f6;
+}
+
+/* Shop Content */
+.shop__content{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+}

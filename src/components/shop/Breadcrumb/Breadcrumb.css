@@ -1,0 +1,23 @@
+/*========== BREACRUMB ==========*/
+.breadcrumb{
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+.breadcrumb__title{
+    display: none;
+}
+
+.breadcrumb__container{
+    padding: 15px 20px;
+}
+
+.breadcrumb__list{
+    display: flex;
+    column-gap: 15px;
+}
+
+.breadcrumb__item{
+    font-size: 13px;
+    font-weight: 400;
+}

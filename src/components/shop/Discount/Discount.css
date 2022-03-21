@@ -1,0 +1,45 @@
+.discount{
+    margin-top: 50px;
+    border-top: 1px solid #e1e1e1
+}
+
+.discount__container{
+    max-width: 770px;
+    margin: 0 auto;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.discount__title,
+.discount__subtitle,
+.discount-form{
+    text-align: center;
+}
+
+.discount__title{
+    font-size: 36px;
+    font-weight: 400;
+    margin: 15px 0 20px;
+    line-height: 40px;
+    color: var(--text-color-secondary);
+    padding: 0;
+}
+
+.discount__subtitle{
+    color: #6c6c6c;
+    margin-bottom: 50px;
+}
+
+.discount-form>input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #e1e1e1;
+    color: #c3c3c3;
+    display: block;
+    height: 50px;
+    text-align: center;
+    box-shadow: none;
+    margin-bottom: 40px;
+}

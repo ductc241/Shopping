@@ -1,0 +1,125 @@
+/*=============== BREAKPOINTS ===============*/
+
+/* For large devices */
+@media screen and (max-width: 320px) {
+    .shop__content{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container{
+        max-width: 750px;
+    }
+
+    /* header */
+    .header{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .header__cart,
+    .header__search,
+    .header__user{
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        
+        margin-left: 30px;
+
+        line-height: 24px;
+        cursor: pointer;
+    }
+
+    .header__cart i,
+    .header__search i,
+    .header__user i{
+        font-size: 22px;
+    }
+
+    .shop__content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .discount__container{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container{
+        max-width: 980px;
+    }
+
+    .breadcrumb{
+        margin-bottom: 60px;
+    }
+
+    .sidebar{
+        display: block;
+    }
+
+    .shop__grid{
+        grid-template-columns: 3fr 9fr;
+        column-gap: 40px;
+    }
+
+    .shop__content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .breadcrumb__container{
+        padding: 120px 20px 65px 20px;
+        background-image: url('../images/breadcrumb.jpg');
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .breadcrumb__list{
+        justify-content: center;
+    }
+
+    .breadcrumb__title{
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .filter__toggle{
+        display: none;
+    }
+
+    .shop__action{
+        justify-content: end;
+    }
+
+    .productBox__summary{
+        flex-direction: row;
+        column-gap: 40px;
+    }
+
+    .productBox__gallery,
+    .productBox__content{
+        flex-basis: 50%;
+    }
+}
+
+
+@media screen and (min-width: 1280px) {
+    .container{
+        max-width: 1210px;
+    }
+
+    .shop__content{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .header__mobile-toggle{
+        display: none;
+    }
+
+    .nav__list-desktop{
+        display: block;
+    }
+}
