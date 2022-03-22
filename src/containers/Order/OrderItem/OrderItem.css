@@ -1,0 +1,14 @@
+.order__item{
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+.order__item-title {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.order__item div{
+    margin-bottom: 10px;
+}

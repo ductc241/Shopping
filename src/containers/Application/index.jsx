@@ -9,12 +9,13 @@ import Login from '../Auth/Login'
 import RequireAuth from '../Auth/RequireAuth'
 import { getUserInfor } from '../../axios/user'
 import { setAuthen } from '../../redux/slices/authSlice'
+import { setCartItem } from '../../redux/slices/cartSlide'
 
 // pages
 import ProductDetail from '../ProductDetail'
 import Shop from '../Shop'
 import Cart from '../Cart'
-import { setCartItem } from '../../redux/slices/cartSlide'
+import Order from '../Order'
 
 
 
@@ -49,13 +50,17 @@ const Application = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Navigate to="shop" />} />
+          
           <Route path="/shop" element={<Shop />} />
           <Route path="/product" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+
+          <Route path="/order" element={<Order />} />
         </Route>
 
         <Route element={<SubLayout />}>
+
         </Route>
       </Routes>
     </React.Fragment>

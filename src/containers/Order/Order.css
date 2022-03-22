@@ -1,0 +1,21 @@
+.order{
+    margin-bottom: 130px;
+}
+
+.order__container{
+    box-shadow: 0 2px 2px #00000024, 0 1px 5px #0000001f, 0 3px 1px -2px #0003;
+    padding: 20px 15px;
+}
+
+.order__empty{
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--text-color-primary);
+}
+
+.order__list{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}

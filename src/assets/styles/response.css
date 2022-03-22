@@ -103,6 +103,14 @@
     .productBox__content{
         flex-basis: 50%;
     }
+
+    .order__container{
+        padding: 30px;
+    }
+
+    .order__list{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 

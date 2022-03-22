@@ -8,6 +8,7 @@ import './Cart.css'
 import { updateCart } from '../../axios/user'
 import { createOrder } from '../../axios/order'
 import { resetCartItem } from '../../redux/slices/cartSlide'
+import { toast } from 'react-toastify'
 
 
 const Cart = () => {
@@ -34,7 +35,7 @@ const Cart = () => {
         cartItems.forEach(element => {
             total += (element.price * element.quantity)
         });
-
+        
         return total
     }
 
@@ -49,6 +50,7 @@ const Cart = () => {
             id: userInfor.id,
             cart: []
         })
+        toast('Đặt hàng thành công')
     }
 
     return (

@@ -6,7 +6,7 @@ import './Header.css'
 import Logo from '../../../assets/images/logo/logo_dark.svg'
 
 const Header = () => {
-    const { amount } = useSelector(state => state.cart)
+    const { authenticated, userInfor } = useSelector(state => state.auth)
 
     return (
         <header className="header" id="header">
@@ -49,7 +49,11 @@ const Header = () => {
                 </div>
                 <div className="header__user">
                     <i className='bx bx-user' ></i>
-                    <Link to="/login">Login</Link>
+                    {authenticated ? userInfor.displayName : (<Link to="/login">Login</Link>)}
+                    <ul className="header__user-submenu">
+                        <li><Link to='/order'>Order</Link></li>
+                        <li>Logout</li>
+                    </ul>
                 </div>
                 <div className="header__mobile-toggle">
                     <i className='bx bx-menu'></i>
