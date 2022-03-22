@@ -50,10 +50,12 @@ const Header = () => {
                 <div className="header__user">
                     <i className='bx bx-user' ></i>
                     {authenticated ? userInfor.displayName : (<Link to="/login">Login</Link>)}
-                    <ul className="header__user-submenu">
-                        <li><Link to='/order'>Order</Link></li>
-                        <li>Logout</li>
-                    </ul>
+                    {authenticated && (
+                        <ul className="header__user-submenu">
+                            <li><Link to='/order'>Order</Link></li>
+                            <li>Logout</li>
+                        </ul>
+                    )}
                 </div>
                 <div className="header__mobile-toggle">
                     <i className='bx bx-menu'></i>

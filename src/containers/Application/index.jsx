@@ -56,7 +56,11 @@ const Application = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
 
-          <Route path="/order" element={<Order />} />
+            <Route path="/order" element={
+              <RequireAuth>
+                <Order />
+              </RequireAuth>
+            } />
         </Route>
 
         <Route element={<SubLayout />}>
