@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { toast } from 'react-toastify';
 import { addCartItem } from '../../../../redux/slices/cartSlide'
 
 import './Product.css'
@@ -11,13 +10,12 @@ const ProductItem = ({ product }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { authenticated } = useSelector(state => state.auth)
+  const { cartItems } = useSelector(state => state.cart)
 
-  const handleAddCart = () => {
+  const handleAddCart = async () => {
     if(authenticated){
-      const cartItem = { product: product._id, quantity: 1}
-      
-      dispatch(addCartItem(cartItem))
-      toast("Thêm vào giỏ thành công!");
+      const item = { product: product._id, quantity: 1, price: product.price}
+      dispatch(addCartItem(item))
     }else{
       navigate('/login')
     }

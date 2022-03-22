@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { toast } from 'react-toastify';
 
 const cartSlide = createSlice({
     name: 'cart',
@@ -9,6 +10,16 @@ const cartSlide = createSlice({
     },
 
     reducers: {
+        resetCartItem(state, action) {
+            state.cartItems = []
+            state.amount = 0
+        },
+        
+        setCartItem(state, action) {
+            state.cartItems = action.payload
+            state.amount = action.payload.length
+        },
+
         removeCartItem(state, action) {
             const newCartItems = state.cartItems.filter(
                 cartItem => cartItem.id !== action.payload
@@ -39,9 +50,10 @@ const cartSlide = createSlice({
                 state.cartItems.push(action.payload)
                 state.amount += action.payload.quantity
             }
+            toast("Thêm vào giỏ thành công!");
         }
     }
 })
 
-export const { removeCartItem, decreaseCartItem, addCartItem } = cartSlide.actions;
+export const { resetCartItem ,setCartItem, removeCartItem, decreaseCartItem, addCartItem } = cartSlide.actions;
 export default cartSlide

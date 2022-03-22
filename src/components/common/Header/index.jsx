@@ -43,7 +43,9 @@ const Header = () => {
                 </div>
                 <div className="header__cart">
                     <i className='bx bx-shopping-bag'></i>
-                    <span>Cart({amount})</span>
+                    <Link to='/cart'>
+                         <span>Cart</span>
+                    </Link>
                 </div>
                 <div className="header__user">
                     <i className='bx bx-user' ></i>

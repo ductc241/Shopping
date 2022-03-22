@@ -1,0 +1,9 @@
+.cart__container{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart__container thead{
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #e1e1e1;
+}

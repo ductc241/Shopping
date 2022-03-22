@@ -1,8 +1,10 @@
 import instance from "./instance";
 
-export const updateCart = () => {
-    const url = '/api/products'
-    return instance.post(url)
+export const updateCart = (data) => {
+    const url = `/api/users/${data.id}`
+    return instance.put(url, {
+        cart: data.cart
+    })
 }
 
 export const getUserInfor = () => {
