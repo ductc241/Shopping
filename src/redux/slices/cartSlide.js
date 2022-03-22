@@ -27,19 +27,21 @@ const cartSlide = createSlice({
             }
         },
 
-        increaseCartItem(state, action) {
-            const itemIdex = state.cartItems.findIndex(
-                cartItem => cartItem.id === action.payload
+        addCartItem(state, action) {
+            const itemIndex = state.cartItems.findIndex(
+                cartItem => cartItem.product === action.payload.product
             )
             
-            if(itemIdex){
-                state.cartItems[itemIdex].qty += 1                
+            if(itemIndex >= 0){
+                state.cartItems[itemIndex].quantity += 1
+                state.amount += action.payload.quantity
             }else{
                 state.cartItems.push(action.payload)
+                state.amount += action.payload.quantity
             }
         }
     }
 })
 
-export const { removeCartItem, decreaseCartItem, increaseCartItem } = cartSlide.actions;
+export const { removeCartItem, decreaseCartItem, addCartItem } = cartSlide.actions;
 export default cartSlide

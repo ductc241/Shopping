@@ -32,10 +32,9 @@ const Login = () => {
     setError('')
     try {
       const respon = await login(data)
-      console.log(respon)
 
       dispatch(setAuthen(respon.data))
-      localStorage.setItem('token', respon.data.token)
+      localStorage.setItem('isLogin', 'true')
       navigate('/shop')
 
     } catch (error) {
