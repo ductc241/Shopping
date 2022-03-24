@@ -57,6 +57,10 @@
     text-align: center;
 }
 
+.login__footer-text a{
+    color: var(--color-primary);
+}
+
 .form-error{
     background-color: #e26868;
     border-color: #de536a;

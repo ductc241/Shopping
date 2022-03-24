@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -83,7 +83,9 @@ const Login = () => {
           </div>
 
           <Button type='submit' content='SIGN IN' variant='border' />
-          <p className='login__footer-text'>Forget Password ??</p>
+          <div className='login__footer-text'>
+            <Link to='/register'>Don't have account ??? </Link>
+          </div>
         </form>
       </div>
     </div>
