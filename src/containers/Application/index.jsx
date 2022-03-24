@@ -16,6 +16,7 @@ import ProductDetail from '../ProductDetail'
 import Shop from '../Shop'
 import Cart from '../Cart'
 import Order from '../Order'
+import Register from '../Auth/Register'
 
 
 
@@ -55,6 +56,7 @@ const Application = () => {
           <Route path="/product" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
             <Route path="/order" element={
               <RequireAuth>
