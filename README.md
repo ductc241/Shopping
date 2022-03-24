@@ -1,3 +1,3 @@
-1 - Frontend: React, Redux
-2 - Backend: Nodejs + Express
-3 - Deploy: [Website](https://shopping-woad-beta.vercel.app/shop)
+- Frontend: React, Redux
+- Backend: Nodejs + Express
+- Deploy: [Website](https://shopping-woad-beta.vercel.app/shop)
