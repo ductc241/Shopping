@@ -1,0 +1,29 @@
+.pagination__container{
+    display: flex;
+    column-gap: 10px;
+}
+
+.pagination__item{
+    border: 2px solid #e1e1e1;
+    cursor: pointer;
+}
+
+.pagination__item a,
+.pagination__item span{
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 15px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.pagination__item.active{
+    border-color: #333e48;
+}
+
+.pagination__item-arrow{
+    line-height: 36px;
+    padding: 0 15px;
+    font-weight: 400;
+    text-align: center;
+}

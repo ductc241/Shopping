@@ -3,8 +3,8 @@ import { getAll } from "../../axios/product";
 
 export const getProducts = createAsyncThunk(
     'product/getProducts',
-    async () => {
-        const { data } = await getAll()
+    async (page) => {
+        const { data } = await getAll(page)
         return data
     }
 )

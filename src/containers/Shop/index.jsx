@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getProducts } from '../../redux/slices/productSlide'
@@ -6,15 +6,20 @@ import { getProducts } from '../../redux/slices/productSlide'
 import ProductList from '../../components/shop/Product/ProductList'
 
 import Sidebar from '../../components/shop/Sidebar'
+import Pagination from '../../components/common/Pagination'
+
 import './Shop.css'
 
 const index = () => {
     const dispatch = useDispatch()
     
     const { list, isLoading } = useSelector(state => state.products)
+    
 
     useEffect(() => {
-        dispatch(getProducts())
+        if(list.length === 0){
+            dispatch(getProducts())
+        }
     }, [])
 
     return (
@@ -47,6 +52,8 @@ const index = () => {
                             'Not Fount Product'
                         )}
                     </div>
+
+                    <Pagination />
                 </div>
             </div>
         </section>
