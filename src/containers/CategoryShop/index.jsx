@@ -13,8 +13,8 @@ const CategoryShop = () => {
     let params = useParams();
 
     useEffect(() => {
-        dispatch(getProductsByCate('6239f37cc139e105ee20ac41'))
-    }, []);
+        dispatch(getProductsByCate(params.slug))
+    }, [params]);
 
     return (
         <React.Fragment>

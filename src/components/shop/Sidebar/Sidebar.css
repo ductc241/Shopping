@@ -19,6 +19,9 @@
     line-height: 26px;
     cursor: pointer;
     padding: 7px 0;
+}
+
+.sidebar__category-item a{
     color: var(--text-color-primary);
 }
 
