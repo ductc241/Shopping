@@ -94,11 +94,15 @@
     height: 100%;
     padding: 20px;
     background-color: white;
-    /* box-shadow: rgb(100 100 111 / 20%) 20px 0px 29px 0px; */
     overflow: scroll;
 
     transform: translateX(-100%);
     transition: .5s;
+}
+
+.nav__list-mobile.active{
+    box-shadow: rgb(100 100 111 / 20%) 20px 0px 29px 0px;
+    transform: translateX(0);
 }
 
 .nav__list-mobile .nav__item{
@@ -115,7 +119,15 @@
 }
 
 .nav__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
+}
+
+.nav__title i{
+    font-size: 25px;
+    transform: rotate(45deg);
 }
 
 .nav__overlay{

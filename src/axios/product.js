@@ -5,3 +5,8 @@ export const getAll = (page) => {
     const url = `/api/products?page=${currentPage}`
     return instance.get(url)
 }
+
+export const getByCategory = (data) => {
+    const url = `api/products/category/${data}`
+    return instance.get(url, data)
+}

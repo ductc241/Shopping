@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import MainLayout from '../../Layouts/MainLayout'
@@ -17,10 +17,12 @@ import Shop from '../Shop'
 import Cart from '../Cart'
 import Order from '../Order'
 import Register from '../Auth/Register'
-
+import ProductShop from '../ProductShop'
+import CategoryShop from '../CategoryShop'
 
 
 const Application = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   
   useEffect(() => {
@@ -49,10 +51,13 @@ const Application = () => {
   return (
     <React.Fragment>
       <Routes>
+        
         <Route element={<MainLayout />}>
-          <Route index element={<Navigate to="shop" />} />
-          
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop />}>
+            <Route path="" element={<ProductShop />} />
+            <Route path="category/:slug" element={<CategoryShop />} />
+          </Route>
+
           <Route path="/product" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
@@ -63,10 +68,7 @@ const Application = () => {
                 <Order />
               </RequireAuth>
             } />
-        </Route>
-
-        <Route element={<SubLayout />}>
-
+          <Route path="*" element={<Navigate to="/shop" />} />
         </Route>
       </Routes>
     </React.Fragment>

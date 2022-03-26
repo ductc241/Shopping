@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAll } from "../../axios/product";
+import { getAll, getByCategory } from "../../axios/product";
 
 export const getProducts = createAsyncThunk(
     'product/getProducts',
@@ -8,6 +8,15 @@ export const getProducts = createAsyncThunk(
         return data
     }
 )
+
+export const getProductsByCate = createAsyncThunk(
+    'product/getProductsByCategory',
+    async (cateId) => {
+        const { data } = await getByCategory(cateId)
+        return data
+    }
+)
+
 
 const productSlide = createSlice({
     name: 'product',
@@ -19,6 +28,11 @@ const productSlide = createSlice({
 
     extraReducers: (builder) => {
         builder.addCase(getProducts.fulfilled, (state, action) => {
+            state.list = action.payload
+            state.isLoading = false
+        }),
+
+        builder.addCase(getProductsByCate.fulfilled, (state, action) => {
             state.list = action.payload
             state.isLoading = false
         })

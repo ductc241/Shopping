@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -7,7 +7,8 @@ import Logo from '../../../assets/images/logo/logo_dark.svg'
 
 const Header = () => {
     const { authenticated, userInfor } = useSelector(state => state.auth)
-
+    const [isOpen, setIsOpen] = useState(false);
+    
     return (
         <header className="header" id="header">
         <nav className="nav container">
@@ -57,13 +58,22 @@ const Header = () => {
                         </ul>
                     )}
                 </div>
-                <div className="header__mobile-toggle">
+                <div
+                    className="header__mobile-toggle"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
                     <i className='bx bx-menu'></i>
                 </div>
             </div>
-            <div className="nav__list-mobile">
+            <div className={isOpen ? "nav__list-mobile active" : "nav__list-mobile"}>
                 <div className="nav__list-content">
-                    <h2 className="nav__title">Menu</h2>
+                    <div className="nav__title">
+                        <h2>Menu</h2>
+                        <i
+                            className='bx bx-plus'
+                            onClick={() => setIsOpen(false)}
+                        ></i>
+                    </div>
                     <ul>
                         <li className="nav__item">
                             <a href="#" className="nav__link">Home</a>

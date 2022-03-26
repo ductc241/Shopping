@@ -1,27 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { getProducts } from '../../redux/slices/productSlide'
-
-import ProductList from '../../components/shop/Product/ProductList'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 import Sidebar from '../../components/shop/Sidebar'
 import Pagination from '../../components/common/Pagination'
 
 import './Shop.css'
+import { Outlet } from 'react-router-dom'
 
 const index = () => {
-    const dispatch = useDispatch()
-    
-    const { list, isLoading } = useSelector(state => state.products)
-    
-
-    useEffect(() => {
-        if(list.length === 0){
-            dispatch(getProducts())
-        }
-    }, [])
-
+    const { list } = useSelector(state => state.products)
     return (
         <section className="shop container">
             <div className="shop__grid grid">
@@ -44,16 +31,12 @@ const index = () => {
                     </div>
 
                     <div className="shop__content grid">
-                        {isLoading ? (
-                            'Loading'
-                        ) : list.products.length > 0 ? (
-                            <ProductList list={list.products}/>
-                        ): (
-                            'Not Fount Product'
-                        )}
+                        <Outlet />
                     </div>
 
-                    <Pagination />
+                    {list && list.count > 0 && (
+                        <Pagination />
+                    )}
                 </div>
             </div>
         </section>

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 import './Sidebar.css'
 
@@ -8,7 +10,9 @@ const Sidebar = () => {
       <div className="sidebar__box">
           <h3 className="sidebar__title">Categories</h3>
           <ul className="sidebar__category">
-              <li className="sidebar__category-item">Furniture</li>
+              <li className="sidebar__category-item">
+                <Link to="category/Furniture">Furniture</Link>
+              </li>
               <li className="sidebar__category-item">Kitchen Thing</li>
               <li className="sidebar__category-item">Decor Art</li>
               <li className="sidebar__category-item">Illumination</li>
